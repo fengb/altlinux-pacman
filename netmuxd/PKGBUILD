@@ -1,0 +1,15 @@
+pkgname='netmuxd'
+pkgver='0.1.3'
+pkgrel='1'
+pkgdesc="A replacement/addition to usbmuxd which is a reimplementation of Apple's usbmuxd on MacOS"
+arch=('x86_64')
+url='https://github.com/jkcoxson/netmuxd'
+license=('MIT')
+source=('https://github.com/jkcoxson/netmuxd/releases/download/v0.1.3/x86_64-linux-netmuxd')
+noextract=('x86_64-linux-netmuxd')
+depends=()
+sha256sums=('bd3553cc0b38a300cf5130ab2dc18a16cd43bb32dc5e8dfa75481fdd4385570d')
+
+package() {
+  install -D -m0755 x86_64-linux-netmuxd "${pkgdir}/usr/bin/netmuxd"
+}
