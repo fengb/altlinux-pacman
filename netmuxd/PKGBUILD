@@ -5,12 +5,18 @@ pkgdesc="A replacement/addition to usbmuxd which is a reimplementation of Apple'
 arch=('x86_64')
 url='https://github.com/jkcoxson/netmuxd'
 license=('MIT')
-source=('https://github.com/jkcoxson/netmuxd/releases/download/v0.1.4/x86_64-linux-netmuxd' 'https://raw.githubusercontent.com/fengb/altlinux-pacman/5e8808b3/netmuxd/netmuxd-extension.service')
+source=(
+  'https://github.com/jkcoxson/netmuxd/releases/download/v0.1.4/x86_64-linux-netmuxd'
+  'https://raw.githubusercontent.com/fengb/altlinux-pacman/014dbec7/netmuxd/netmuxd-extension@.service'
+)
 noextract=('x86_64-linux-netmuxd')
 depends=('usbmuxd')
-sha256sums=('a0ce9047a2b46b8cb79bff628b3c55a78e4bfd13fb61ed418ffa00c7eeea9a27' '9462693d5d5f7cefbb49bbaf3097bbe105127a9e46eb99899b20135b13924cc6')
+sha256sums=(
+  'a0ce9047a2b46b8cb79bff628b3c55a78e4bfd13fb61ed418ffa00c7eeea9a27'
+  '61d9503c72ebbef4dcbfe227e70b44369f97e9473863c45ef196b9345f695f36'
+)
 
 package() {
   install -D -m0755 'x86_64-linux-netmuxd' "${pkgdir}/usr/bin/netmuxd"
-  install -D -m0644 'netmuxd-extension.service' "${pkgdir}/usr/lib/systemd/system/netmuxd-extension.service"
+  install -D -m0644 'netmuxd-extension@.service' "${pkgdir}/usr/lib/systemd/system/netmuxd-extension@.service"
 }
