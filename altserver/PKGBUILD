@@ -1,0 +1,26 @@
+pkgname='altserver'
+pkgver='0.0.5'
+pkgrel='1'
+pkgdesc="AltServer for AltStore, but on-device"
+arch=('x86_64')
+url='https://github.com/NyaMisty/AltServer-Linux'
+license=('MIT')
+source=(
+  'https://github.com/NyaMisty/AltServer-Linux/releases/download/v0.0.5/AltServer-x86_64'
+  'https://raw.githubusercontent.com/fengb/altlinux-pacman/9036bd33/altserver/altserver.service'
+  'https://raw.githubusercontent.com/fengb/altlinux-pacman/9036bd33/altserver/altserver@.service'
+)
+noextract=('AltServer-x86_64')
+depends=('usbmuxd')
+optdepends=('netmuxd')
+sha256sums=(
+  '0be7c3adc69ec1177a15032b3b8e37c5d0e4fefb47c9c439cd62c238b3ea17fb'
+  '320572a7d103dd1910964802dc6d35b4ce35e6539ae84c28e322a5eea9eab956'
+  'd3b487a7bf1b17608146663e64a2bd6cf692665fdbe2af48318d26cf35a60051'
+)
+
+package() {
+  install -D -m0755 'AltServer-x86_64' "${pkgdir}/usr/bin/altserver"
+  install -D -m0644 'altserver.service' "${pkgdir}/usr/lib/systemd/system/altserver.service"
+  install -D -m0644 'altserver@.service' "${pkgdir}/usr/lib/systemd/system/altserver@.service"
+}
