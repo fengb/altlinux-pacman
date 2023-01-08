@@ -8,4 +8,4 @@ RestartSec=5s
 ExecStart=/usr/bin/altserver
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

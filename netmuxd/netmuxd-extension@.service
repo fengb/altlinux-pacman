@@ -9,4 +9,4 @@ RestartSec=5s
 ExecStart=/usr/bin/netmuxd --disable-unix --host 127.0.0.1 --port %i
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target

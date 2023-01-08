@@ -9,4 +9,4 @@ ExecStart=/usr/bin/altserver
 Environment=USBMUXD_SOCKET_ADDRESS=127.0.0.1:%i
 
 [Install]
-WantedBy=default.target
+WantedBy=multi-user.target
