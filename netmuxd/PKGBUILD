@@ -7,13 +7,13 @@ url='https://github.com/jkcoxson/netmuxd'
 license=('MIT')
 source=(
   'https://github.com/jkcoxson/netmuxd/releases/download/v0.1.4/x86_64-linux-netmuxd'
-  'https://raw.githubusercontent.com/fengb/altlinux-pacman/014dbec7/netmuxd/netmuxd-extension@.service'
+  'https://raw.githubusercontent.com/fengb/altlinux-pacman/ac3e7670/netmuxd/netmuxd-extension@.service'
 )
 noextract=('x86_64-linux-netmuxd')
 depends=('usbmuxd')
 sha256sums=(
   'a0ce9047a2b46b8cb79bff628b3c55a78e4bfd13fb61ed418ffa00c7eeea9a27'
-  '61d9503c72ebbef4dcbfe227e70b44369f97e9473863c45ef196b9345f695f36'
+  'd0833439c4a01452d203e26c47cfc19e6547ff3645f7e298d9a6fc3ee1f17f76'
 )
 
 package() {
