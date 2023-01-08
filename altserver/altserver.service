@@ -1,0 +1,11 @@
+[Unit]
+Description=Run altserver daemon
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=5s
+ExecStart=/usr/bin/altserver
+
+[Install]
+WantedBy=default.target
